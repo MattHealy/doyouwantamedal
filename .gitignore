@@ -1,0 +1,11 @@
+set-environment.sh
+*.log
+*.pot
+*.pyc
+app/*.pyc
+tmp/*
+*.swp
+uploads/*
+!uploads/README
+app/static/.webassets-cache
+zappa_settings.json
