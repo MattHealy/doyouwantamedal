@@ -2,24 +2,24 @@
 
 {% block content %}
 
-    <form method="post">
+      <form class="form-signin" method="post">
 
-      {{ form.hidden_tag() }}
+        {{ form.hidden_tag() }}
 
-      <div class="form-group">
-        {{ form.name(placeholder="Enter recipient name", required="required", autofocus="autofocus") }}
-      </div>
+        <h2 class="form-signin-heading">Do you want a certificate?!</h2>
 
-      <div class="form-group">
-        {{ form.award(placeholder="Enter award text", required="required") }}
-      </div>
+        <label for="name" class="sr-only">Recipient</label>
 
-      <div class="row">
-        <div class="col-xs-4">
-          {{ form.submit(class="btn btn-primary btn-block btn-flat") }}
-        </div>
-      </div>
+        {{ form.name(placeholder="Enter recipient's name", class="form-control", required="required", autofocus="autofocus") }}
 
-    </form>
+        <label for="award" class="sr-only">Award</label>
+
+        {{ form.award(placeholder="Enter award description", class="form-control", required="required") }}
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Create Certificate</button>
+
+      </form>
+
+      <img src="/static/certificates/out.jpg" class="img-responsive" width="800" />
 
 {% endblock %}

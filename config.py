@@ -9,7 +9,9 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     CSRF_ENABLED = True
 
-    UPLOAD_FOLDER = os.path.join(basedir, 'uploads')
+    FONTS_FOLDER = os.path.join(basedir, 'fonts')
+    STATIC_FOLDER = os.path.join(basedir, 'app', 'static')
+    UPLOADS_FOLDER = os.path.join(basedir, 'uploads')
 
     MAX_CONTENT_LENGTH = 20971520
 
