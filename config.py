@@ -11,7 +11,6 @@ class Config:
 
     FONTS_FOLDER = os.path.join(basedir, 'fonts')
     STATIC_FOLDER = os.path.join(basedir, 'app', 'static')
-    UPLOADS_FOLDER = os.path.join(basedir, 'uploads')
 
     MAX_CONTENT_LENGTH = 20971520
 

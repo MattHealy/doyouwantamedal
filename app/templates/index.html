@@ -8,18 +8,16 @@
 
         <h2 class="form-signin-heading">Do you want a certificate?!</h2>
 
-        <label for="name" class="sr-only">Recipient</label>
+        <label for="name">Awarded to</label>
 
         {{ form.name(placeholder="Enter recipient's name", class="form-control", required="required", autofocus="autofocus") }}
 
-        <label for="award" class="sr-only">Award</label>
+        <label for="award">For superior achievement in</label>
 
         {{ form.award(placeholder="Enter award description", class="form-control", required="required") }}
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Create Certificate</button>
 
       </form>
-
-      <img src="/static/certificates/out.jpg" class="img-responsive" width="800" />
 
 {% endblock %}
