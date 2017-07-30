@@ -39,15 +39,15 @@ class Certificate(Generator):
 
         draw = ImageDraw.Draw(im)
 
-        width = 1308
+        width = 1298
         font = ImageFont.truetype(
             os.path.join(app.config['FONTS_FOLDER'], "FreeSans.ttf"), 20)
 
         w, h = draw.textsize(name, font=font)
-        draw.text(((width - w) / 2, 470), name, (0, 0, 0), font=font)
+        draw.text(((width - w) / 2, 465), name, (0, 0, 0), font=font)
 
         w, h = draw.textsize(award, font=font)
-        draw.text(((width - w) / 2, 610), award, (0, 0, 0), font=font)
+        draw.text(((width - w) / 2, 605), award, (0, 0, 0), font=font)
 
         today = date.today()
 
@@ -56,13 +56,13 @@ class Certificate(Generator):
         year = today.strftime('%Y')
 
         w, h = draw.textsize(day, font=font)
-        draw.text((350, 705), day, (0, 0, 0), font=font)
+        draw.text((350, 700), day, (0, 0, 0), font=font)
 
         w, h = draw.textsize(month, font=font)
-        draw.text((580, 705), month, (0, 0, 0), font=font)
+        draw.text((580, 700), month, (0, 0, 0), font=font)
 
         w, h = draw.textsize(year, font=font)
-        draw.text((870, 705), year, (0, 0, 0), font=font)
+        draw.text((870, 700), year, (0, 0, 0), font=font)
 
         im.save(fp)
 
