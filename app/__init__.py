@@ -29,7 +29,7 @@ def create_app(config_name):
     if not os.path.exists(os.path.join(basedir, 'tmp')):
         os.makedirs(os.path.join(basedir, 'tmp'))
 
-    if True:
+    if config_name == 'development':
         import logging
         from logging.handlers import RotatingFileHandler
 
