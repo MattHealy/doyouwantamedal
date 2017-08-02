@@ -17,6 +17,8 @@ def index():
         cert = Certificate()
         fp = cert.generate(name, award)
 
+        cert.store(name, award)
+
         return(send_file(filename_or_fp=fp, mimetype="image/jpg",
                          as_attachment=True,
                          attachment_filename='certificate-{}.jpg'

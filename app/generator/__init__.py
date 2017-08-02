@@ -1,5 +1,7 @@
 import os
-from datetime import date
+import boto3
+import uuid
+from datetime import date, datetime
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -24,11 +26,41 @@ class Generator(object):
     def generate(self, name, award):
         pass
 
+    def store(self, name, award):
+
+        client = boto3.client(
+            'dynamodb', region_name=os.environ.get('AWS_REGION'))
+
+        id = str(uuid.uuid4())
+
+        item = {
+            'id': {
+                'S': id
+            },
+            'type': {
+                'S': self.type
+            },
+            'insertdate': {
+                'S': datetime.utcnow().isoformat(timespec='seconds')
+            },
+            'name': {
+                'S': name
+            },
+            'award': {
+                'S': award
+            }
+        }
+
+        client.put_item(
+            TableName=app.config['TABLE_NAME'],
+            Item=item
+        )
+
 
 class Certificate(Generator):
 
     def __init__(self):
-        pass
+        self.type = 'certificate'
 
     def generate(self, name, award):
 
